@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.services.model.AdCategory" />
+	<import class="com.services.model.AdCity" />
+	<import class="com.services.model.AdCountry" />
+	<import class="com.services.model.AdListing" />
+	<import class="com.services.model.AdResponseTracker" />
+	<import class="com.services.model.AdStatsTracker" />
+	<class name="com.services.model.impl.AdCategoryImpl" table="AL_AdCategory">
+		<cache usage="read-write" />
+		<id name="categoryId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="categoryName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="categoryStatus" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="createdDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.services.model.impl.AdCityImpl" table="AL_AdCity">
+		<cache usage="read-write" />
+		<id name="cityId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="cityName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="stateName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="cityStatus" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="popular" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="createdDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.services.model.impl.AdCountryImpl" table="AL_AdCountry">
+		<cache usage="read-write" />
+		<id name="countryId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="countryName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="countryStatus" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="createdDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.services.model.impl.AdListingImpl" table="AL_AdListing">
+		<cache usage="read-write" />
+		<id name="adId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="adTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="adDescription" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="adCatId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="adServiceType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="adCountryId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="adCityId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="adUserName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="adUserEmail" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="adUserPhone" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="adStatus" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="createdDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.services.model.impl.AdResponseTrackerImpl" table="AL_AdResponseTracker">
+		<cache usage="read-write" />
+		<id name="artId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="adId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="phone" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="comments" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="userIP" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createdDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.services.model.impl.AdStatsTrackerImpl" table="AL_AdStatsTracker">
+		<cache usage="read-write" />
+		<id name="adId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="adCount" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createdDate" type="org.hibernate.type.TimestampType" />
+		<property name="lastAccessedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+</hibernate-mapping>

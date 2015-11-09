@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.services.model.impl.AdCategoryModelImpl">
+		<attributes>
+			<id name="categoryId" />
+			<basic name="categoryName" />
+			<basic name="categoryStatus" />
+			<basic name="createdDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.services.model.impl.AdCityModelImpl">
+		<attributes>
+			<id name="cityId" />
+			<basic name="cityName" />
+			<basic name="stateName" />
+			<basic name="cityStatus" />
+			<basic name="popular" />
+			<basic name="createdDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.services.model.impl.AdCountryModelImpl">
+		<attributes>
+			<id name="countryId" />
+			<basic name="countryName" />
+			<basic name="countryStatus" />
+			<basic name="createdDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.services.model.impl.AdListingModelImpl">
+		<attributes>
+			<id name="adId" />
+			<basic name="adTitle" />
+			<basic name="adDescription" />
+			<basic name="adCatId" />
+			<basic name="adServiceType" />
+			<basic name="adCountryId" />
+			<basic name="adCityId" />
+			<basic name="userId" />
+			<basic name="adUserName" />
+			<basic name="adUserEmail" />
+			<basic name="adUserPhone" />
+			<basic name="adStatus" />
+			<basic name="createdDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="companyId" />
+			<basic name="groupId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.services.model.impl.AdResponseTrackerModelImpl">
+		<attributes>
+			<id name="artId" />
+			<basic name="adId" />
+			<basic name="userId" />
+			<basic name="name" />
+			<basic name="email" />
+			<basic name="phone" />
+			<basic name="comments" />
+			<basic name="userIP" />
+			<basic name="createdDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.services.model.impl.AdStatsTrackerModelImpl">
+		<attributes>
+			<id name="adId" />
+			<basic name="adCount" />
+			<basic name="createdDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="lastAccessedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.services.model.impl.AdCategoryImpl" name="AdCategory">
+		<table name="AL_AdCategory" />
+		<attributes />
+	</entity>
+	<entity class="com.services.model.impl.AdCityImpl" name="AdCity">
+		<table name="AL_AdCity" />
+		<attributes />
+	</entity>
+	<entity class="com.services.model.impl.AdCountryImpl" name="AdCountry">
+		<table name="AL_AdCountry" />
+		<attributes />
+	</entity>
+	<entity class="com.services.model.impl.AdListingImpl" name="AdListing">
+		<table name="AL_AdListing" />
+		<attributes />
+	</entity>
+	<entity class="com.services.model.impl.AdResponseTrackerImpl" name="AdResponseTracker">
+		<table name="AL_AdResponseTracker" />
+		<attributes />
+	</entity>
+	<entity class="com.services.model.impl.AdStatsTrackerImpl" name="AdStatsTracker">
+		<table name="AL_AdStatsTracker" />
+		<attributes />
+	</entity>
+</entity-mappings>

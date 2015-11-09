@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.services.service.AdCategoryLocalService" class="com.services.service.impl.AdCategoryLocalServiceImpl" />
+	<bean id="com.services.service.AdCategoryService" class="com.services.service.impl.AdCategoryServiceImpl" />
+	<bean id="com.services.service.persistence.AdCategoryPersistence" class="com.services.service.persistence.AdCategoryPersistenceImpl" parent="basePersistence" />
+	<bean id="com.services.service.AdCityLocalService" class="com.services.service.impl.AdCityLocalServiceImpl" />
+	<bean id="com.services.service.persistence.AdCityPersistence" class="com.services.service.persistence.AdCityPersistenceImpl" parent="basePersistence" />
+	<bean id="com.services.service.AdCountryLocalService" class="com.services.service.impl.AdCountryLocalServiceImpl" />
+	<bean id="com.services.service.persistence.AdCountryPersistence" class="com.services.service.persistence.AdCountryPersistenceImpl" parent="basePersistence" />
+	<bean id="com.services.service.AdListingLocalService" class="com.services.service.impl.AdListingLocalServiceImpl" />
+	<bean id="com.services.service.AdListingService" class="com.services.service.impl.AdListingServiceImpl" />
+	<bean id="com.services.service.persistence.AdListingPersistence" class="com.services.service.persistence.AdListingPersistenceImpl" parent="basePersistence" />
+	<bean id="com.services.service.AdResponseTrackerLocalService" class="com.services.service.impl.AdResponseTrackerLocalServiceImpl" />
+	<bean id="com.services.service.persistence.AdResponseTrackerPersistence" class="com.services.service.persistence.AdResponseTrackerPersistenceImpl" parent="basePersistence" />
+	<bean id="com.services.service.AdStatsTrackerLocalService" class="com.services.service.impl.AdStatsTrackerLocalServiceImpl" />
+	<bean id="com.services.service.persistence.AdStatsTrackerPersistence" class="com.services.service.persistence.AdStatsTrackerPersistenceImpl" parent="basePersistence" />
+</beans>

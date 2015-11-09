@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_AL_AdCategoryService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.services.service.http.AdCategoryServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="AdCategoryServiceSoap" />
+		<parameter name="wsdlServiceElement" value="AdCategoryServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_AL_AdCategoryService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.services.com" />
+	</service>
+</deployment>

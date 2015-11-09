@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.services.model.AdCategory">
+		<field name="categoryId" type="long" />
+		<field name="categoryName" type="String" />
+		<field name="categoryStatus" type="boolean" />
+		<field name="createdDate" type="Date" />
+	</model>
+	<model name="com.services.model.AdCity">
+		<field name="cityId" type="long" />
+		<field name="cityName" type="String" />
+		<field name="stateName" type="String" />
+		<field name="cityStatus" type="boolean" />
+		<field name="popular" type="boolean" />
+		<field name="createdDate" type="Date" />
+	</model>
+	<model name="com.services.model.AdCountry">
+		<field name="countryId" type="long" />
+		<field name="countryName" type="String" />
+		<field name="countryStatus" type="boolean" />
+		<field name="createdDate" type="Date" />
+	</model>
+	<model name="com.services.model.AdListing">
+		<field name="adId" type="long" />
+		<field name="adTitle" type="String">
+			<hint name="max-length">150</hint>
+		</field>
+		<field name="adDescription" type="String">
+			<hint-collection name="TEXTAREA" />
+			<hint name="display-width">350</hint>
+		</field>
+		<field name="adCatId" type="long" />
+		<field name="adServiceType" type="String" />
+		<field name="adCountryId" type="long" />
+		<field name="adCityId" type="long" />
+		<field name="userId" type="long" />
+		<field name="adUserName" type="String" />
+		<field name="adUserEmail" type="String" />
+		<field name="adUserPhone" type="String" />
+		<field name="adStatus" type="boolean" />
+		<field name="createdDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+	</model>
+	<model name="com.services.model.AdResponseTracker">
+		<field name="artId" type="long" />
+		<field name="adId" type="long" />
+		<field name="userId" type="long" />
+		<field name="name" type="String" />
+		<field name="email" type="String" />
+		<field name="phone" type="String" />
+		<field name="comments" type="String">
+			<hint-collection name="TEXTAREA" />
+			<hint name="display-width">350</hint>
+		</field>
+		<field name="userIP" type="String" />
+		<field name="createdDate" type="Date" />
+	</model>
+	<model name="com.services.model.AdStatsTracker">
+		<field name="adId" type="long" />
+		<field name="adCount" type="long" />
+		<field name="createdDate" type="Date" />
+		<field name="lastAccessedDate" type="Date" />
+	</model>
+</model-hints>

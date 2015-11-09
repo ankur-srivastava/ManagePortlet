@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0">
+	<portlet>
+		<portlet-name>manage</portlet-name>
+		<display-name>"manage"</display-name>
+		<portlet-class>com.ui.controller.MainController</portlet-class>
+		<init-param>
+			<name>view-jsp</name>
+			<value>/WEB-INF/jsp/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>post-jsp</name>
+			<value>/WEB-INF/jsp/postad.jsp</value>
+		</init-param>
+		<init-param>
+			<name>addCategory-jsp</name>
+			<value>/WEB-INF/jsp/addCategory.jsp</value>
+		</init-param>
+		<init-param>
+			<name>addCity-jsp</name>
+			<value>/WEB-INF/jsp/addCity.jsp</value>
+		</init-param>
+		<init-param>
+			<name>addCountry-jsp</name>
+			<value>/WEB-INF/jsp/addCountry.jsp</value>
+		</init-param>
+		<init-param>
+			<name>listingDetail-jsp</name>
+			<value>/WEB-INF/jsp/listingDetail.jsp</value>
+		</init-param>
+		<init-param>
+			<name>editAd-jsp</name>
+			<value>/WEB-INF/jsp/editAd.jsp</value>
+		</init-param>
+		<init-param>
+			<name>searchAd-jsp</name>
+			<value>/WEB-INF/jsp/searchAd.jsp</value>
+		</init-param>
+		<init-param>
+			<name>makeCityPopular-jsp</name>
+			<value>/WEB-INF/jsp/makeCityPopular.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>"manage"</title>
+			<short-title>"manage"</short-title>
+			<keywords>"manage"</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-processing-event>
+			<qname xmlns:x="http://liferay.com/events">x:category</qname>
+		</supported-processing-event>
+		<supported-processing-event>
+			<qname xmlns:x="http://liferay.com/events">x:filterResults</qname>
+		</supported-processing-event>
+	</portlet>
+	<portlet>
+		<portlet-name>aa-select-category</portlet-name>
+		<display-name>Select Category</display-name>
+		<portlet-class>com.ui.controller.SelectCategoryController</portlet-class>
+		<init-param>
+			<name>sc-view-jsp</name>
+			<value>/WEB-INF/jsp/sc_view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Select Category</title>
+			<short-title>Select Category</short-title>
+			<keywords>Select Category</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-publishing-event>
+			<qname xmlns:x="http://liferay.com/events">x:category</qname>
+		</supported-publishing-event>
+		<supported-publishing-event>
+			<qname xmlns:x="http://liferay.com/events">x:filterResults</qname>
+		</supported-publishing-event>
+	</portlet>
+	<portlet>
+		<portlet-name>aa-ad-response</portlet-name>
+		<display-name>AD Response</display-name>
+		<portlet-class>com.ui.controller.AdResponseController</portlet-class>
+		<init-param>
+			<name>adResponse-view-jsp</name>
+			<value>/WEB-INF/jsp/adResponse_view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>listingDetail-jsp</name>
+			<value>/WEB-INF/jsp/listingDetail.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>AD Response</title>
+			<short-title>AD Response</short-title>
+			<keywords>AD Response</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<event-definition>
+		<qname xmlns:x="http://liferay.com/events">x:category</qname>
+		<value-type>java.lang.Long</value-type>
+	</event-definition>
+	<event-definition>
+		<qname xmlns:x="http://liferay.com/events">x:filterResults</qname>
+		<value-type>com.ui.helper.AdCategoryHelper</value-type>
+	</event-definition>
+</portlet-app>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+
+<service-builder package-path="com.services">
+	<author>Ankur Srivastava</author>
+	<namespace>AL</namespace>
+	<entity name="AdListing" local-service="true" remote-service="true">
+		<column name="adId" primary="true" type="long"/>
+		<column name="adTitle" type="String"/>
+		<column name="adDescription" type="String"/>
+		<column name="adCatId" type="long"/>
+		<column name="adServiceType" type="String"/>
+		<column name="adCountryId" type="long"/>
+		<column name="adCityId" type="long"/>
+		<column name="userId" type="long"/>
+		<column name="adUserName" type="String"/>
+		<column name="adUserEmail" type="String"/>
+		<column name="adUserPhone" type="String"/>
+		<column name="adStatus" type="boolean"/>
+		<column name="createdDate" type="Date"/>
+		<column name="modifiedDate" type="Date"/>
+		
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+		
+		<order by="desc">
+			<order-column name="adId" />
+		</order>
+		<finder name="CatId" return-type="Collection">
+			<finder-column name="adCatId" />
+		</finder>
+		<finder name="CityId" return-type="Collection">
+			<finder-column name="adCityId" />
+		</finder>
+		<finder name="ServiceType" return-type="Collection">
+			<finder-column name="adServiceType" />
+		</finder>
+		<finder name="UserId" return-type="Collection">
+			<finder-column name="userId" />
+		</finder>
+		<finder name="Cat_City_Service" return-type="Collection">
+			<finder-column name="adCatId" />
+			<finder-column name="adCityId" />
+			<finder-column name="adServiceType" />
+		</finder>
+		<finder name="Cat_City" return-type="Collection">
+			<finder-column name="adCatId" />
+			<finder-column name="adCityId" />
+		</finder>
+		<finder name="UGC" return-type="Collection">
+			<finder-column name="userId" />
+			<finder-column name="groupId" />
+			<finder-column name="companyId" />
+		</finder>
+		<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+	</entity>
+	<entity name="AdCategory" local-service="true" remote-service="true">
+		<column name="categoryId" primary="true" type="long" />
+		<column name="categoryName" type="String" />
+		<column name="categoryStatus" type="boolean" />
+		<column name="createdDate" type="Date" />
+		
+		<order by="asc">
+			<order-column name="categoryName" />
+		</order>
+		<finder name="CategoryStatus" return-type="Collection">
+			<finder-column name="categoryStatus" />
+		</finder>
+	</entity>
+	<entity name="AdCity" local-service="true" remote-service="false">
+		<column name="cityId" primary="true" type="long" />
+		<column name="cityName" type="String" />
+		<column name="stateName" type="String" />
+		<column name="cityStatus" type="boolean" />
+		<column name="popular" type="boolean" />
+		<column name="createdDate" type="Date" />
+		
+		<order by="asc">
+			<order-column name="cityName" />
+		</order>
+		<finder name="CityStatus" return-type="Collection">
+			<finder-column name="cityStatus" />
+		</finder>
+		<finder name="CityName" return-type="Collection">
+			<finder-column name="cityName" />
+		</finder>
+		<finder name="popular" return-type="Collection">
+			<finder-column name="popular" />
+		</finder>
+	</entity>
+	<entity name="AdCountry" local-service="true" remote-service="false">
+		<column name="countryId" primary="true" type="long" />
+		<column name="countryName" type="String" />
+		<column name="countryStatus" type="boolean" />
+		<column name="createdDate" type="Date" />
+		
+		<order by="asc">
+			<order-column name="countryName" />
+		</order>
+		<finder name="CountryStatus" return-type="Collection">
+			<finder-column name="countryStatus" />
+		</finder>
+	</entity>
+	<entity name="AdStatsTracker" local-service="true" remote-service="false">
+		<column name="adId" primary="true" type="long" />
+		<column name="adCount" type="long"/>
+		<column name="createdDate" type="Date"/>
+		<column name="lastAccessedDate" type="Date"/>
+	</entity>
+	<entity name="AdResponseTracker" local-service="true" remote-service="false">
+		<column name="artId" primary="true" type="long" />
+		<column name="adId" type="long" />
+		<column name="userId" type="long"/>
+		<column name="name" type="String"/>
+		<column name="email" type="String"/>
+		<column name="phone" type="String"/>
+		<column name="comments" type="String"/>
+		<column name="userIP" type="String"/>
+		<column name="createdDate" type="Date"/>
+		
+		<order by="desc">
+			<order-column name="createdDate" />
+		</order>
+		<finder name="User" return-type="Collection">
+			<finder-column name="userId" />
+		</finder>
+		<finder name="AdId" return-type="Collection">
+			<finder-column name="adId" />
+		</finder>
+	</entity>
+</service-builder>
